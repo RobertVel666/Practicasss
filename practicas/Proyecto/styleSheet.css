@@ -1,0 +1,61 @@
+/*Font color*/
+.redC{
+    color: #E0060A; 
+}
+
+.text-black{
+    color: white;
+    background-color: #E0060A;
+}
+
+.blk{
+    color: #0B0B12;
+}
+
+/*Buttons*/
+.btn-red{
+    background-color: #E0060A;
+    color: white;
+
+}
+
+.btn-red:hover{
+    background-color: #0B0B12;
+    color: white;
+
+}
+
+.btn-sub{
+    background-color: white;
+    border: 1px solid lightgray;
+    color: #E0060A;
+}
+
+.btn-sub:hover{
+    background-color: black;
+    color: white;
+}
+
+.jb-btn{
+    border-top: 1px solid lightgray;
+    border-radius: 0%;
+    color: #E0060A;
+}
+
+/*Backgrounds*/
+
+.red{
+    background-color: #E0060A;
+}
+
+
+.bg-darkish{
+    background-color: #0B0B12;
+    color: white;
+}
+
+/*Styles*/
+
+.no-rad{
+    border-radius: 0%;
+}
