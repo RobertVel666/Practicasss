@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button, Switch, TextInput} from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,64 +18,36 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      switchValue: false,
-    };
-  }
-  onChangeText =(text) =>{
-    alert("title","Es lo que se escribio")
-  }
-
-  onChange = (value) => {
-    console.warn(`El switch cambiara a: ${value}`)
-    this.setState({switchValue: value})
-  }
-  onPressLearnMore(){
-    console.warn('Presionaste el boton')
-  }
   render() {
     return (
       <View style = {styles.container}>
-      <TextInput
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-        onChangeText={text => onChangeText(text)}
-        value={value}
-      />
-      <Switch 
-        onValueChange = {() => this.onChange(!this.state.switchValue)}
-        value = {this.state.switchValue}
-      />
-      <Button
-          onPress={this.onPressLearnMore}
-          title = "Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-        <Text style = {styles.welcome}> My music - Roberto</Text>
-        <Text style = {styles.instructions}>To get started, edit App.js</Text>
-        <Text style = {styles.instructions}>{instructions}</Text>
+        <View style = {[styles.box, styles.red]}/>
+        <View style = {[styles.box, styles.green]}/>
+        <View style = {[styles.box, styles.blue]}/>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container: { 
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flexDirection: 'row',
+    backgroundColor: 'white',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  box: {
+    width: 150,
+    height: 200,
+    backgroundColor: 'black'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  red:{
+    backgroundColor: 'red'
   },
-});
+  green:{
+    flex: 1,
+    backgroundColor: 'green'
+  },
+  blue:{
+    backgroundColor: 'blue'
+  }
+})
