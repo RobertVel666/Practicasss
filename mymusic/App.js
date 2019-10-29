@@ -1,53 +1,35 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, View} from 'react-native';
+import t from 'tcomb-form-native'; // 0.6.9
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+const Form = t.form.Form;
+
+const User = t.struct({
+  email: t.String,
+  username: t.String,
+  password: t.String,
+  terms: t.Boolean
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
+  handleSubmit = () => {
+    // do the things  
+  }
   render() {
     return (
-      <View style = {styles.container}>
-        <View style = {[styles.box, styles.red]}/>
-        <View style = {[styles.box, styles.green]}/>
-        <View style = {[styles.box, styles.blue]}/>
+      <View style={styles.container}>
+        <Form type={User} /> {/* Notice the addition of the Form component */}
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'white',
+  container: {
+    justifyContent: 'center',
+    marginTop: 50,
+    padding: 20,
+    backgroundColor: '#ffffff',
   },
-  box: {
-    width: 150,
-    height: 200,
-    backgroundColor: 'black'
-  },
-  red:{
-    backgroundColor: 'red'
-  },
-  green:{
-    flex: 1,
-    backgroundColor: 'green'
-  },
-  blue:{
-    backgroundColor: 'blue'
-  }
-})
+});
