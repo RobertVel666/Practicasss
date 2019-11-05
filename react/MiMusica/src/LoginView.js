@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {
     Platform,
-    Stylesheet,
+    StyleSheet,
     View,
     Text,
     Image,
-    Textinput,
+    TextInput,
     TouchableOpacity,
 } from 'react-native';
 import { Actions } from "react-native-router-flux";
@@ -32,7 +32,7 @@ export default class LoginView extends Component {
         return(
             <View style={styles.container}>
                 <Image source={require('./assets/ucol.png')} style = {styles.logo} resizeMode= "contain"/>
-                <Textinput
+                <TextInput
                     style={styles.textInput}
                     onChangeText={(username) => this.setState({username})}
                     value = {this.state.username}
@@ -41,7 +41,7 @@ export default class LoginView extends Component {
                     onSubmitEditing ={() => {this.passwordTextInput.focus(); }}
                     returnKeyType = {'next'}
                 />
-                <Textinput
+                <TextInput
                     style={styles.textInput}
                     onChangeText={(password) => this.setState({password})}
                     value = {this.state.password}
@@ -62,3 +62,46 @@ export default class LoginView extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        width: null,
+        height: null,
+        backgroundColor:'white',
+        alignItems: 'center',
+    },
+    logo:{
+        width: 200,
+        height: 150,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        marginTop: Platform.select({
+            ios: 90,
+            android: 50
+        }),
+        marginBottom: 25
+    },
+    textInput:{
+        height: 40,
+        backgroundColor: '#f2f2f2',
+        width: 230,
+        color: '#000035',
+        marginBottom: 40,
+        borderRadius: 5,
+        padding: 5,
+    },
+    boton:{
+        alignItems: 'center',
+        width: 230,
+        height: 40,
+        backgroundColor: '#00ccd0',
+        borderRadius: 5,
+        borderWidth: 2,
+        borderColor: '#fff'
+    },
+    textoBoton:{
+        color: '#fff',
+        fontSize: 22,
+    },
+})
