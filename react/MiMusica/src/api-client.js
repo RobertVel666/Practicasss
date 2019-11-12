@@ -30,7 +30,7 @@ function getMusicData() {
         }),
     })
     .then(response => response.json())
-    .then(data => data.topartist.artist)
+    .then(data => data.topartists.artist)
     .then(artists => artists.map(artist => {
         return{
             id: artist.mbid,

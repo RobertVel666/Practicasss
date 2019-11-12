@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { 
     ListView,
-    TouchableOpacity
+    TouchableOpacity,
+    StyleSheet
  } from 'react-native'
 
 import ArtistBox from './ArtistBox'
@@ -19,7 +20,7 @@ export default class ArtistList extends Component<Props> {
     componentDidMount(){
         this.updateDataSource(this.props.artists)
     }
-
+ 
     componentWillReceiveProps(newProps) {
         if (newProps.artists !== this.props.artists) {
             this.updateDataSource(newProps.artists)
@@ -49,33 +50,3 @@ export default class ArtistList extends Component<Props> {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    artistBox: {
-        margin: 5,
-        backGroundColor: 'white',
-        flexDirection: 'row',
-        shadowColor: 'black',
-        shadowOpacity: .1,
-        shadowoffset: {
-            height: 1,
-            width: -2
-        },
-        elevation: 2
-    },
-    image: {
-        width: 150,
-        height: 150
-    },
-    info: {
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    name: {
-        fontSize: 20,
-        marginTop: 10,
-        color: '#333'
-    },
-})

@@ -18,7 +18,7 @@ export default class HomeView extends Component<Props> {
         console.warn(artists)
 
         return(
-            <View style = {StyleSheet.container}>
+            <View style = {styles.container}>
                 {artists && <ArtistList artists = {artists}/>}
             </View>
         )
