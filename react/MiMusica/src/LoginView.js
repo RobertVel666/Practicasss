@@ -77,10 +77,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginTop: Platform.select({
-            ios: 90,
+            ios: 160,
             android: 50
         }),
-        marginBottom: 25
+        //marginBottom: 25
     },
     textInput:{
         height: 40,
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         color: '#000035',
         marginBottom: 40,
         borderRadius: 5,
-        padding: 5,
+        //padding: 5,
     },
     boton:{
         alignItems: 'center',

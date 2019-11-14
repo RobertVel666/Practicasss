@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { 
     ListView,
     TouchableOpacity,
-    StyleSheet
  } from 'react-native'
 
 import ArtistBox from './ArtistBox'
